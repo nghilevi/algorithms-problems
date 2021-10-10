@@ -1,5 +1,7 @@
+import java.util.List;
+import java.util.ArrayList;
 public class Vertex{
-    
+ 
     private String data;
     private boolean visited;
     private List<Vertex> neighbourList;
@@ -11,6 +13,10 @@ public class Vertex{
 
     public void addNeighbour(Vertex vertex){
         this.neighbourList.add(vertex);
+    }
+
+    public List<Vertex> getNeighbourList(){
+        return this.neighbourList;
     }
 
     public String getData(){

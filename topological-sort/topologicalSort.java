@@ -1,19 +1,21 @@
+import java.util.Stack;
+
 public class TopologicalSort{
     
-    private Stack<Vertex> stack;
+    public Stack<Vertex> stack;
 
     public TopologicalSort(){
-        this.stack = new Stack();
+        this.stack = new Stack<Vertex>();
     }
 
     public void dfs(Vertex vertex){
         vertex.setVisited(true);
         for(Vertex v : vertex.getNeighbourList()){
             if(!v.isVisited()){
-                dfs(v)
-            }
+                dfs(v);
+            };
         }
-        stack.push(vertex)
+        stack.push(vertex);
     }
 
     public Stack<Vertex> getStack(){
